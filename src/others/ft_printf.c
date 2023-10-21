@@ -6,11 +6,15 @@
 /*   By: cagonzal <cagonzal@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 15:09:09 by cagonzal          #+#    #+#             */
-/*   Updated: 2022/10/17 16:17:57 by cagonzal         ###   ########.fr       */
+/*   Updated: 2023/10/21 19:20:35 by cagonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
+
+#ifndef UINTPTR
+# define UINTPTR unsigned long long int
+#endif
 
 static int	ft_makestr(char *str)
 {
@@ -95,7 +99,7 @@ int	ft_printf(const char *str, ...)
 		if (*str != '%')
 			len += write(1, str, 1);
 		else
-		{	
+		{
 			str++;
 			if (*str == 'c' || *str == 's' || *str == 'p' || *str == 'd'
 				|| *str == 'i' || *str == 'u' || *str == 'x'
